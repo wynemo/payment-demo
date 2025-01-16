@@ -1,0 +1,17 @@
+# macOS specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# macOS generated thumbnails
+._*
+
+# macOS Finder tags
+.Spotlight-V100
+.Trashes
+.VolumeIcon.icns
+.metadata_never_index
+.fseventsd
+
+# Node.js dependencies
+node_modules/
