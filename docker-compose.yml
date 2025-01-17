@@ -10,8 +10,10 @@ services:
     volumes:
       - "./:/app"
       - /app/node_modules
+    expose:
+      - 3000
     ports:
-      - 3000:3000
+      - 127.0.0.1:3000:3000
     environment:
       SITE_DB_DATABASE: demo
       SITE_DB_USER: admin
@@ -31,6 +33,17 @@ services:
       MYSQL_PASSWORD: password
     ports:
       - 3306:3306
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./html:/usr/share/nginx/html
+    depends_on:
+      - app
 
   phpmyadmin:
     image: phpmyadmin

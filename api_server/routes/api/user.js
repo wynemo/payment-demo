@@ -1,11 +1,12 @@
 import express from "express";
 import {
-    create,
-    destroy,
-    index,
-    show,
-    update,
-    login,
+  create,
+  destroy,
+  index,
+  show,
+  update,
+  login,
+  profile,
 } from "../../controllers/user.controller.js";
 import { applyAsyncHandlerToRouter } from "../../utils/asyncHandler.js";
 import authMiddleware from "../../middleware/auth.js"; // Import the middleware
@@ -16,6 +17,7 @@ router.post("/login", login);
 router.use(authMiddleware); // Add the middleware to the router
 
 router.get("/", index);
+router.get("/profile", profile);
 router.get("/:id", show);
 router.post("/", create);
 router.patch("/:id", update);

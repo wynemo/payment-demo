@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Profile Page</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f9f9f9;
+                margin: 0;
+                padding: 20px;
+            }
+            .profile-container {
+                max-width: 600px;
+                margin: 50px auto;
+                padding: 20px;
+                background: #fff;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+            }
+            .profile-container h1 {
+                text-align: center;
+            }
+            .profile-info {
+                margin-top: 20px;
+            }
+            .logout-button {
+                margin-top: 20px;
+                display: block;
+                width: 100%;
+                padding: 10px;
+                text-align: center;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            .logout-button:hover {
+                background-color: #0056b3;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="profile-container">
+            <h1>Your Profile</h1>
+            <div id="profile-info" class="profile-info">Loading profile...</div>
+            <button id="logout-button" class="logout-button">Logout</button>
+        </div>
+
+        <script>
+            // 获取 token
+            const token = localStorage.getItem("token");
+
+            if (!token) {
+                alert("Unauthorized access. Redirecting to login page.");
+                window.location.href = "index.html"; // 如果没有 token，跳转回登录页面
+            } else {
+                // 使用 token 请求用户信息
+                fetch("/api/v1/users/profile", {
+                    method: "GET",
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                        "Content-Type": "application/json",
+                    },
+                })
+                    .then((response) => {
+                        if (!response.ok) {
+                            throw new Error(
+                                "Failed to fetch profile information.",
+                            );
+                        }
+                        return response.json();
+                    })
+                    .then((data) => {
+                        data = data.data;
+                        console.log("data is", data);
+                        // 显示用户信息
+                        const profileInfo =
+                            document.getElementById("profile-info");
+                        profileInfo.innerHTML = `
+            <p><strong>ID:</strong> ${data.id}</p>
+            <p><strong>Name:</strong> ${data.first_name} ${data.last_name}</p>
+            <p><strong>Email:</strong> ${data.email}</p>
+          `;
+                    })
+                    .catch((error) => {
+                        alert(error.message);
+                        // localStorage.removeItem("token"); // 清除无效 token
+                        window.location.href = "index.html";
+                    });
+            }
+
+            // 退出登录
+            const logoutButton = document.getElementById("logout-button");
+            logoutButton.addEventListener("click", () => {
+                localStorage.removeItem("token"); // 删除 token
+                alert("Logged out successfully.");
+                window.location.href = "index.html"; // 跳转回登录页面
+            });
+        </script>
+    </body>
+</html>
