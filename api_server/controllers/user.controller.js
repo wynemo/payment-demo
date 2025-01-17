@@ -21,6 +21,8 @@ export const index = async (req, res) => {
     req.query,
   );
 
+  console.log("in index")
+
   //Query data process.
   const users = await userService.findAllWithPagination(validatedQuery);
 

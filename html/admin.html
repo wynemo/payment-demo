@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      text-align: left;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+    .error {
+      color: red;
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Admin Dashboard</h1>
+    <table id="user-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 用户信息将动态加载到这里 -->
+      </tbody>
+    </table>
+    <div id="error-message" class="error"></div>
+  </div>
+
+  <script>
+    const token = localStorage.getItem('token'); // 从 localStorage 获取 JWT token
+    const tableBody = document.querySelector('#user-table tbody');
+    const errorMessage = document.getElementById('error-message');
+
+    // 检查 token 是否存在
+    if (!token) {
+      alert('Unauthorized access. Redirecting to login page.');
+    //   window.location.href = 'index.html'; // 重定向到登录页面
+    } else {
+      // 获取用户列表
+      fetch('/api/v1/users/', {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+      })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Failed to fetch users.');
+          }
+          return response.json();
+        })
+        .then(data => {
+          // 清空表格内容
+          tableBody.innerHTML = '';
+
+          // 动态添加用户数据到表格
+          data.data.forEach(user => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+              <td>${user.id}</td>
+              <td>${user.email}</td>
+            `;
+            tableBody.appendChild(row);
+          });
+        })
+        .catch(error => {
+          errorMessage.textContent = error.message;
+        });
+    }
+  </script>
+</body>
+</html>
