@@ -7,6 +7,7 @@ import {
   update,
   login,
   profile,
+  register,
 } from "../../controllers/user.controller.js";
 import { applyAsyncHandlerToRouter } from "../../utils/asyncHandler.js";
 import authMiddleware from "../../middleware/auth.js"; // Import the middleware
@@ -14,6 +15,7 @@ import adminRequired from "../../middleware/admin.js";
 const router = express.Router();
 
 router.post("/login", login);
+router.post("/register", register)
 
 router.use(authMiddleware); // Add the middleware to the router
 

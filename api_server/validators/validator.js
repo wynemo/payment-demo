@@ -61,7 +61,7 @@ class Validation {
         return schema.keys({
             first_name: schema.extract("first_name").required(),
             last_name: schema.extract("last_name").required(),
-            email: schema.extract("email").required(),
+            email: schema.extract("email").required().email(),
             password: schema.extract("password").required(),
         });
     }

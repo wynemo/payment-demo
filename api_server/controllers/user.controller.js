@@ -42,9 +42,14 @@ export const show = async (req, res) => {
 
 export const profile = async (req, res) => {
   const { id } = req.user;
-  console.log("id is", id);
   const user = await userService.findByPk(id);
-  console.log("user is", user);
+  return res.status(OK).json(user);
+};
+
+export const register = async (req, res) => {
+  const schema = userValidator.create();
+  const validatedBody = userValidator.validate(schema, req.body);
+  const user = await userService.create(validatedBody);
   return res.status(OK).json(user);
 };
 
