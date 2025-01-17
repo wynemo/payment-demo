@@ -1,6 +1,7 @@
-import { OK } from "../enum/httpCode.js";
+import { OK, BAD_REQUEST } from "../enum/httpCode.js";
 import UserService from "../services/user.service.js";
 import UserValidator from "../validators/user.validator.js";
+import httpError from "../utils/httpError.js";
 
 const userService = new UserService();
 const userValidator = new UserValidator();
@@ -20,8 +21,6 @@ export const index = async (req, res) => {
     [baseSchema, paginationSchema, orderSchema],
     req.query,
   );
-
-  console.log("in index")
 
   //Query data process.
   const users = await userService.findAllWithPagination(validatedQuery);
@@ -49,6 +48,18 @@ export const profile = async (req, res) => {
 export const register = async (req, res) => {
   const schema = userValidator.create();
   const validatedBody = userValidator.validate(schema, req.body);
+  const { email } = validatedBody;
+  const baseSchema = userValidator.base();
+
+  const validatedQuery = userValidator.validate(baseSchema, { email: email });
+
+  const oldUser = await userService.findAll(validatedQuery);
+  if (oldUser && oldUser.data.length > 0) {
+    // return res.status(BAD_REQUEST).json({
+    //   error: "Email is already in use", // 错误消息
+    // });
+    throw httpError(BAD_REQUEST, "register error", "Email is already in use");
+  }
   const user = await userService.create(validatedBody);
   return res.status(OK).json(user);
 };
