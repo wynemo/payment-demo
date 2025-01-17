@@ -19,13 +19,15 @@ router.post("/pay", async (req, res) => {
   try {
     // 设置订单信息
     const orderRequest = new orders.OrdersCreateRequest();
+    console.log(req.body);
+    const { value } = req.body;
     orderRequest.requestBody({
       intent: "CAPTURE",
       purchase_units: [
         {
           amount: {
             currency_code: "USD",
-            value: "25.00",
+            value: `${value}`,
           },
           description: "Purchase of 50 Credits",
         },

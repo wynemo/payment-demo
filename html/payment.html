@@ -1,19 +1,79 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <!-- Add meta tags for mobile and IE -->
+        <!-- Meta tags for mobile and IE -->
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <title>PayPal Checkout Integration | Server Demo</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f9f9f9;
+                margin: 0;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+            }
+            .container {
+                background: #fff;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                max-width: 400px;
+                text-align: center;
+                width: 100%;
+            }
+            h1 {
+                margin-bottom: 20px;
+                font-size: 24px;
+                color: #333;
+            }
+            label {
+                font-size: 16px;
+                color: #333;
+                margin-bottom: 8px;
+                display: block;
+            }
+            input[type="number"] {
+                width: 100%;
+                padding: 10px;
+                font-size: 16px;
+                margin-bottom: 20px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+            input[type="number"]:focus {
+                outline: none;
+                border-color: #007bff;
+            }
+            #paypal-button-container {
+                margin-top: 20px;
+            }
+        </style>
     </head>
 
     <body>
-        <!-- Set up a container element for the button -->
-        <div id="paypal-button-container"></div>
+        <div class="container">
+            <h1>PayPal Checkout</h1>
+            <label for="amount">Enter Amount (Minimum $10):</label>
+            <input
+                type="number"
+                id="amount"
+                name="amount"
+                min="10"
+                step="1"
+                placeholder="Enter amount"
+                required
+            />
+            <div id="paypal-button-container"></div>
+        </div>
 
         <!-- Include the PayPal JavaScript SDK -->
         <script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD"></script>
-
         <script>
             // Render the PayPal button into #paypal-button-container
             paypal
@@ -27,12 +87,24 @@
                             alert("Authentication required! Please log in.");
                             return;
                         }
+
+                        const value = document.getElementById("amount").value;
+
+                        // 验证金额是否满足要求
+                        if (!value || parseInt(value) < 10 || isNaN(value)) {
+                            alert("Please enter a valid amount (minimum $10).");
+                            return;
+                        }
+
                         return fetch("/api/v1/payment/pay", {
                             method: "post",
                             headers: {
                                 "Content-Type": "application/json",
                                 Authorization: `Bearer ${token}`, // 在 Header 中附加 JWT
                             },
+                            body: JSON.stringify({
+                                value: value,
+                            }),
                         })
                             .then(function (res) {
                                 return res.json();
