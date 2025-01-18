@@ -41,6 +41,23 @@ services:
     depends_on:
       - app
 
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    restart: always
+    command: --auth --config /etc/mongo/mongod.conf
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: adminpw
+      MONGO_INITDB_DATABASE: testdb
+      TZ: Asia/Shanghai
+    volumes:
+      - ./database/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - ./database/configdb:/data/configdb
+      - ./database/data:/data/db
+      - ./mongod.conf:/etc/mongo/mongod.conf
+    ports:
+      - "27017:27017"
   # phpmyadmin:
   #   image: phpmyadmin
   #   restart: always
