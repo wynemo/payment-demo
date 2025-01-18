@@ -3,8 +3,8 @@ import { core, orders, payments } from "@hyperse/paypal-node-sdk";
 // 配置 PayPal 客户端
 const paypalClient = new core.PayPalHttpClient(
   new core.SandboxEnvironment(
-    "AVKatRMW2G6cej0S9JhW1xIW4h0KyLzpDGQakYaKBdyhO8tI_pdmJnogXTx6Z3ZSXJLzITlagzKgBrIT", // 替换为你的 PayPal 沙盒客户端 ID
-    "EOX7A5RiUWl8FycL9I5F6LdsQ3BC_FGKvU62gqYuSF-qbxeYapaFuK9uyQj8E1XcA1vQ3FjfP1XDvrq6", // 替换为你的 PayPal 沙盒客户端密钥
+    process.env.paypal_client_id, // 替换为你的 PayPal 沙盒客户端 ID
+    process.env.paypal_client_secret, // 替换为你的 PayPal 沙盒客户端密钥
   ),
 );
 
