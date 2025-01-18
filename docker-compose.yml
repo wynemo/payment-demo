@@ -14,12 +14,8 @@ services:
       - 3000
     ports:
       - 127.0.0.1:3000:3000
-    environment:
-      SITE_DB_DATABASE: demo
-      SITE_DB_USER: admin
-      SITE_DB_PASSWORD: password
-      SITE_DB_HOST: db
-      JWT_KEY: 12345678
+    env_file:
+      - ./app.env
     depends_on:
       - db
   db:
