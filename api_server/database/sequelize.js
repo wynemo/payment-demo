@@ -19,6 +19,17 @@ const sequelize = new Sequelize(
       acquire: 30000,
       idle: 10000,
     },
+    retry: {
+      match: [
+        /SequelizeConnectionError/, // 连接错误
+        /SequelizeConnectionRefusedError/, // 连接被拒绝
+        /SequelizeHostNotFoundError/, // 主机未找到
+        /SequelizeHostNotReachableError/, // 主机不可达
+        /SequelizeInvalidConnectionError/, // 无效连接
+        /SequelizeConnectionTimedOutError/, // 连接超时
+      ],
+      max: 5, // 最大重试次数
+    },
   },
 );
 
