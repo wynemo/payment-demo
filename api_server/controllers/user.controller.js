@@ -61,6 +61,7 @@ export const register = async (req, res) => {
     throw httpError(BAD_REQUEST, "register error", "Email is already in use");
   }
   const user = await userService.create(validatedBody);
+  delete user.data.password;
   return res.status(OK).json(user);
 };
 
