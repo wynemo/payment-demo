@@ -8,6 +8,10 @@ docker compose up --build
 
 它会监听在8081端口，可以通过浏览器访问 http://127.0.0.1:8081
 
+## 演示网站
+
+也可以在 https://demo.dabin.info/ 这个网站上进行测试
+
 ## postman 测试
 
 在postman中导入[payment.postman_collection.json](payment.postman_collection.json)文件，可以测试api接口
