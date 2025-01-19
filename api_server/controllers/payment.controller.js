@@ -18,6 +18,13 @@ export const order = async (req, res) => {
     const orderRequest = new orders.OrdersCreateRequest();
     console.log(req.body);
     const { value } = req.body;
+
+    // 检查 value 是否为大于 0 的整数
+    if (!Number.isInteger(value) || value <= 10) {
+      return res.status(400).json({
+        error: "Invalid value. It must be a positive integer greater than 10.",
+      });
+    }
     orderRequest.requestBody({
       intent: "CAPTURE",
       purchase_units: [

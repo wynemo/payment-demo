@@ -2,6 +2,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import express from "express";
 import mongoose from "mongoose";
+import mongoSanitize from "express-mongo-sanitize";
 import { port, env } from "./api_server/config/app.js";
 import apiRouter from "./api_server/routes/order.js";
 
@@ -35,6 +36,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(mongoSanitize());
 
 // Say hello
 app.get("/", (req, res) =>

@@ -32,7 +32,8 @@
     "underscore": "^1.13.6",
     "@hyperse/paypal-node-sdk": "2.0.5",
     "mongoose": "8.9.5",
-    "ioredis": "5.4.2"
+    "ioredis": "5.4.2",
+    "express-mongo-sanitize": "2.2.0"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.3.1",
