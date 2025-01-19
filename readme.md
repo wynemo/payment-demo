@@ -10,7 +10,7 @@ docker compose up --build
 
 ## postman 测试
 
-在postman中导入[payment-demo.postman_collection.json](payment-demo.postman_collection.json)文件，可以测试api接口
+在postman中导入[payment.postman_collection.json](payment.postman_collection.json)文件，可以测试api接口
 
 ## postman 测试演示视频
 
