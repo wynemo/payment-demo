@@ -19,12 +19,16 @@ export const order = async (req, res) => {
     console.log(req.body);
     const { value } = req.body;
 
-    // 检查 value 是否为大于 0 的整数
-    if (!Number.isInteger(value) || value <= 10) {
+    // 将字符串转换为整数
+    const intValue = parseInt(value, 10);
+
+    // 检查是否成功转换为整数，且大于 10
+    if (isNaN(intValue) || intValue < 10) {
       return res.status(400).json({
         error: "Invalid value. It must be a positive integer greater than 10.",
       });
     }
+
     orderRequest.requestBody({
       intent: "CAPTURE",
       purchase_units: [
