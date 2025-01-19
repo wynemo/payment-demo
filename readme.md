@@ -8,6 +8,12 @@ docker compose up --build
 
 它会监听在8081端口，可以通过浏览器访问 http://127.0.0.1:8081
 
+## postman 测试
+
+在postman中导入[payment-demo.postman_collection.json](payment-demo.postman_collection.json)文件，可以测试api接口
+
+## postman 测试演示视频
+
 ## API 接口
 
 ### 注册用户
@@ -43,6 +49,7 @@ curl 'http://127.0.0.1:8081/api/v1/users/register' \
     }
 }
 ```
+[用户注册-点击此处观看视频](用户注册-1.mp4)
 
 ### 用户登录
 curl 请求为
@@ -69,6 +76,7 @@ curl --location 'http://127.0.0.1:8081/api/v1/users/login' \
 {
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTA2LCJlbWFpbCI6InRlc3RAdGVzdDEuY29tIiwiaWF0IjoxNzM3Mjg0MTI5LCJleHAiOjE3MzcyODc3Mjl9.MdzK1HeVQOgT0DPx4hd0xMbDSrtflxZV9SMHSazRqh8"
 }
+后续的请求在header里加入Authorization: Bearer token
 ```
 
 ### 创建订单
