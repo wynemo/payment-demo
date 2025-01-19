@@ -75,6 +75,14 @@ services:
       - ./mongod.conf:/etc/mongo/mongod.conf
     ports:
       - "27017:27017"
+  redis:
+    image: redis
+    container_name: redis_server
+    expose:
+      - 6379
+    volumes:
+      - ./redis_data:/data # 数据持久化
+    restart: always
   phpmyadmin:
     image: phpmyadmin
     restart: always
