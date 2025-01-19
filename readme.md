@@ -236,3 +236,74 @@ curl --location --request POST 'http://127.0.0.1:8081/api/v1/payment/capture/2U1
     ]
 }
 ```
+
+## 整体架构
++ nginx 作为反向代理，负责转发请求到后端服务
++ nodejs 作为后端服务，提供api接口, 使用express框架
++ mysql 作为数据库存储用户信息
++ mongodb 作为订单信息存储
++ 分为用户服务和支付服务两个服务，用户服务负责用户注册和登录，使用mysql; 支付服务负责支付接口 使用mongodb
++ 后续也可以加入其他服务，依旧使用用户服务来做用户验证
++ 使用redis作为缓存，缓存订单信息列表 因为这个也不会变的特别频繁
++ 使用payal作为支付接口
++ express-mongo-sanitize来清洗输入; joi验证字段合法性  前端的用户 订单的输入字段 以及分页的字段
++ 用jwt来做用户验证
+
+
+## Overall Architecture
++	Nginx acts as a reverse proxy, responsible for forwarding requests to backend services.
++	Node.js serves as the backend, providing API endpoints using the Express framework.
++	MySQL is used as the database to store user information.
++	MongoDB is used to store order information.
++	The architecture is divided into two services:
++	User Service: Handles user registration and login, using MySQL.
++	Payment Service: Handles payment APIs, using MongoDB.
++	Additional services can be added in the future, with user authentication still handled by the User Service.
++	Redis is used as a cache to store the order information list since it does not change frequently.
++	PayPal is used as the payment gateway.
++	express-mongo-sanitize is used to sanitize inputs; Joi is used to validate the legality of input fields. This applies to fields such as user data, order data, and pagination parameters from the frontend.
++	JWT (JSON Web Token) is used for user authentication.
+
+```mermaid
+graph TD
+  subgraph Reverse Proxy
+    Nginx["Nginx"]
+  end
+
+  subgraph Services
+    UserService["User Service (Node.js, Express)"]
+    OrderService["Order Service (Node.js, Express)"]
+  end
+
+  subgraph Databases
+    MySQL["MySQL (User Data)"]
+    MongoDB["MongoDB (Order Data)"]
+  end
+
+  subgraph Caching
+    Redis["Redis (Order Cache)"]
+  end
+
+  subgraph External API
+    PayPal["PayPal (Payment Gateway)"]
+  end
+
+  Nginx --> UserService
+  Nginx --> OrderService
+
+  UserService --> MySQL
+  OrderService --> MongoDB
+  OrderService --> Redis
+
+  OrderService --> PayPal
+
+  MySQL -->|Persistent Data| DataVolume1["MySQL Volume"]
+  MongoDB -->|Persistent Data| DataVolume2["MongoDB Volume"]
+  Redis -->|Persistent Data| DataVolume3["Redis Volume"]
+
+  style Nginx fill:#ffcccb,stroke:#333,stroke-width:2px
+  style Services fill:#add8e6,stroke:#333,stroke-width:2px
+  style Databases fill:#f5deb3,stroke:#333,stroke-width:2px
+  style Caching fill:#98fb98,stroke:#333,stroke-width:2px
+  style ExternalAPI fill:#d8bfd8,stroke:#333,stroke-width:2px
+```
