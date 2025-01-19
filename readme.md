@@ -305,5 +305,4 @@ graph TD
   style Services fill:#add8e6,stroke:#333,stroke-width:2px
   style Databases fill:#f5deb3,stroke:#333,stroke-width:2px
   style Caching fill:#98fb98,stroke:#333,stroke-width:2px
-  style ExternalAPI fill:#d8bfd8,stroke:#333,stroke-width:2px
 ```
