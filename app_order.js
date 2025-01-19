@@ -3,7 +3,7 @@ import cors from "cors";
 import express from "express";
 import mongoose from "mongoose";
 import { port, env } from "./api_server/config/app.js";
-import apiRouter from "./api_server/routes/index.js";
+import apiRouter from "./api_server/routes/order.js";
 
 // 数据库连接配置
 const dbConfig = {
