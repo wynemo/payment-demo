@@ -1,0 +1,1395 @@
+{
+	"info": {
+		"_postman_id": "32b8e5c4-8ff8-476f-a998-06aec738dfdb",
+		"name": "payment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41271423"
+	},
+	"item": [
+		{
+			"name": "user register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9,zh;q=0.8,ja;q=0.7"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "CSRF-Token-4AACGSG=UpeCYrj6DiKtC5SCMHxCPTFomDhKMHmH; pma_lang=en; phpMyAdmin=66d09b9c188b115d12a8a713df950e4a; pmaUser-1=0YoKBda%2B9DUpQhx8%2BFVtw2ktJETmomfa%2FHrgr6w97HEFFwWyTcrx27wM28w%3D; pmaAuth-1=fMPpDDqRyF0d8wa0Q0%2BEQXmuhjwwO2UPmeBr15th2lL9Un%2B0GgIDS6D%2FGy2zEmvwB31OfD7UqWpVQ3HE"
+					},
+					{
+						"key": "Origin",
+						"value": "http://127.0.0.1:8081"
+					},
+					{
+						"key": "Referer",
+						"value": "http://127.0.0.1:8081/register.html"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-origin"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"test@test1.com\",\"password\":\"123\",\"first_name\":\"mazi\",\"last_name\":\"wong\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8081/api/v1/users/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"register"
+					]
+				},
+				"description": "Generated from cURL: curl 'http://127.0.0.1:8081/api/v1/users/register' \\\n  -H 'Accept: */*' \\\n  -H 'Accept-Language: en-US,en;q=0.9,zh;q=0.8,ja;q=0.7' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Content-Type: application/json' \\\n  -H 'Cookie: CSRF-Token-4AACGSG=UpeCYrj6DiKtC5SCMHxCPTFomDhKMHmH; pma_lang=en; phpMyAdmin=66d09b9c188b115d12a8a713df950e4a; pmaUser-1=0YoKBda%2B9DUpQhx8%2BFVtw2ktJETmomfa%2FHrgr6w97HEFFwWyTcrx27wM28w%3D; pmaAuth-1=fMPpDDqRyF0d8wa0Q0%2BEQXmuhjwwO2UPmeBr15th2lL9Un%2B0GgIDS6D%2FGy2zEmvwB31OfD7UqWpVQ3HE' \\\n  -H 'Origin: http://127.0.0.1:8081' \\\n  -H 'Referer: http://127.0.0.1:8081/register.html' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: same-origin' \\\n  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36' \\\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  --data-raw '{\"email\":\"test@test1.com\",\"password\":\"123\",\"first_name\":\"mazi\",\"last_name\":\"wong\"}'"
+			},
+			"response": [
+				{
+					"name": "user register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-US,en;q=0.9,zh;q=0.8,ja;q=0.7"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "CSRF-Token-4AACGSG=UpeCYrj6DiKtC5SCMHxCPTFomDhKMHmH; pma_lang=en; phpMyAdmin=66d09b9c188b115d12a8a713df950e4a; pmaUser-1=0YoKBda%2B9DUpQhx8%2BFVtw2ktJETmomfa%2FHrgr6w97HEFFwWyTcrx27wM28w%3D; pmaAuth-1=fMPpDDqRyF0d8wa0Q0%2BEQXmuhjwwO2UPmeBr15th2lL9Un%2B0GgIDS6D%2FGy2zEmvwB31OfD7UqWpVQ3HE"
+							},
+							{
+								"key": "Origin",
+								"value": "http://127.0.0.1:8081"
+							},
+							{
+								"key": "Referer",
+								"value": "http://127.0.0.1:8081/register.html"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-origin"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"macOS\""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\":\"test@test1.com\",\"password\":\"123\",\"first_name\":\"mazi\",\"last_name\":\"wong\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8081/api/v1/users/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.27.2"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Jan 2025 10:45:28 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "161"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a1-1VP7TQYK10BuNUORcbV4+L0QJxk\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 505,\n        \"email\": \"test@test1.com\",\n        \"first_name\": \"mazi\",\n        \"last_name\": \"wong\",\n        \"updatedAt\": \"2025-01-19T10:45:28.743Z\",\n        \"createdAt\": \"2025-01-19T10:45:28.743Z\"\n    }\n}"
+				},
+				{
+					"name": "user register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-US,en;q=0.9,zh;q=0.8,ja;q=0.7"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "CSRF-Token-4AACGSG=UpeCYrj6DiKtC5SCMHxCPTFomDhKMHmH; pma_lang=en; phpMyAdmin=66d09b9c188b115d12a8a713df950e4a; pmaUser-1=0YoKBda%2B9DUpQhx8%2BFVtw2ktJETmomfa%2FHrgr6w97HEFFwWyTcrx27wM28w%3D; pmaAuth-1=fMPpDDqRyF0d8wa0Q0%2BEQXmuhjwwO2UPmeBr15th2lL9Un%2B0GgIDS6D%2FGy2zEmvwB31OfD7UqWpVQ3HE"
+							},
+							{
+								"key": "Origin",
+								"value": "http://127.0.0.1:8081"
+							},
+							{
+								"key": "Referer",
+								"value": "http://127.0.0.1:8081/register.html"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-origin"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"macOS\""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\":\"test@test1.com\",\"password\":\"123\",\"first_name\":\"mazi\",\"last_name\":\"wong\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8081/api/v1/users/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"register"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.27.2"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Jan 2025 10:46:49 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "72"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"48-l/n1L87Y1lpxgF20SJKnVhDyw44\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"message\": \"register error\",\n        \"errors\": \"Email is already in use\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "user login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9,zh;q=0.8,ja;q=0.7"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "CSRF-Token-4AACGSG=UpeCYrj6DiKtC5SCMHxCPTFomDhKMHmH; pma_lang=en; phpMyAdmin=66d09b9c188b115d12a8a713df950e4a; pmaUser-1=0YoKBda%2B9DUpQhx8%2BFVtw2ktJETmomfa%2FHrgr6w97HEFFwWyTcrx27wM28w%3D; pmaAuth-1=fMPpDDqRyF0d8wa0Q0%2BEQXmuhjwwO2UPmeBr15th2lL9Un%2B0GgIDS6D%2FGy2zEmvwB31OfD7UqWpVQ3HE"
+					},
+					{
+						"key": "Origin",
+						"value": "http://127.0.0.1:8081"
+					},
+					{
+						"key": "Referer",
+						"value": "http://127.0.0.1:8081/index.html"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-origin"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"test@test1.com\",\"password\":\"123\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8081/api/v1/users/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"login"
+					]
+				},
+				"description": "Generated from cURL: curl 'http://127.0.0.1:8081/api/v1/users/login' \\\n  -H 'Accept: */*' \\\n  -H 'Accept-Language: en-US,en;q=0.9,zh;q=0.8,ja;q=0.7' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Content-Type: application/json' \\\n  -H 'Cookie: CSRF-Token-4AACGSG=UpeCYrj6DiKtC5SCMHxCPTFomDhKMHmH; pma_lang=en; phpMyAdmin=66d09b9c188b115d12a8a713df950e4a; pmaUser-1=0YoKBda%2B9DUpQhx8%2BFVtw2ktJETmomfa%2FHrgr6w97HEFFwWyTcrx27wM28w%3D; pmaAuth-1=fMPpDDqRyF0d8wa0Q0%2BEQXmuhjwwO2UPmeBr15th2lL9Un%2B0GgIDS6D%2FGy2zEmvwB31OfD7UqWpVQ3HE' \\\n  -H 'Origin: http://127.0.0.1:8081' \\\n  -H 'Referer: http://127.0.0.1:8081/index.html' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: same-origin' \\\n  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36' \\\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  --data-raw '{\"email\":\"test@test1.com\",\"password\":\"123\"}'"
+			},
+			"response": [
+				{
+					"name": "user login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-US,en;q=0.9,zh;q=0.8,ja;q=0.7"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "CSRF-Token-4AACGSG=UpeCYrj6DiKtC5SCMHxCPTFomDhKMHmH; pma_lang=en; phpMyAdmin=66d09b9c188b115d12a8a713df950e4a; pmaUser-1=0YoKBda%2B9DUpQhx8%2BFVtw2ktJETmomfa%2FHrgr6w97HEFFwWyTcrx27wM28w%3D; pmaAuth-1=fMPpDDqRyF0d8wa0Q0%2BEQXmuhjwwO2UPmeBr15th2lL9Un%2B0GgIDS6D%2FGy2zEmvwB31OfD7UqWpVQ3HE"
+							},
+							{
+								"key": "Origin",
+								"value": "http://127.0.0.1:8081"
+							},
+							{
+								"key": "Referer",
+								"value": "http://127.0.0.1:8081/index.html"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-origin"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"macOS\""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\":\"test@test1.com\",\"password\":\"123\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8081/api/v1/users/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.27.2"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Jan 2025 10:55:29 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "185"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b9-HJVGdz3WRETy4qdfa38keBKuth8\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTA2LCJlbWFpbCI6InRlc3RAdGVzdDEuY29tIiwiaWF0IjoxNzM3Mjg0MTI5LCJleHAiOjE3MzcyODc3Mjl9.MdzK1HeVQOgT0DPx4hd0xMbDSrtflxZV9SMHSazRqh8\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get my credits order history",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9,zh;q=0.8,ja;q=0.7"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTA2LCJlbWFpbCI6InRlc3RAdGVzdDEuY29tIiwiaWF0IjoxNzM3Mjg0MTI5LCJleHAiOjE3MzcyODc3Mjl9.MdzK1HeVQOgT0DPx4hd0xMbDSrtflxZV9SMHSazRqh8"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "CSRF-Token-4AACGSG=UpeCYrj6DiKtC5SCMHxCPTFomDhKMHmH; pma_lang=en; phpMyAdmin=66d09b9c188b115d12a8a713df950e4a; pmaUser-1=0YoKBda%2B9DUpQhx8%2BFVtw2ktJETmomfa%2FHrgr6w97HEFFwWyTcrx27wM28w%3D; pmaAuth-1=fMPpDDqRyF0d8wa0Q0%2BEQXmuhjwwO2UPmeBr15th2lL9Un%2B0GgIDS6D%2FGy2zEmvwB31OfD7UqWpVQ3HE"
+					},
+					{
+						"key": "If-None-Match",
+						"value": "W/\"33-XD7Lr2cA3TPvb1ymgy9GBARwXGs\"",
+						"disabled": true
+					},
+					{
+						"key": "Referer",
+						"value": "http://127.0.0.1:8081/profile.html"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-origin"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8081/api/v1/order/orders/mine?page=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"order",
+						"orders",
+						"mine"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl 'http://127.0.0.1:8081/api/v1/order/orders/mine' \\\n  -H 'Accept: */*' \\\n  -H 'Accept-Language: en-US,en;q=0.9,zh;q=0.8,ja;q=0.7' \\\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDAzLCJlbWFpbCI6InRlc3RAdGVzdDEuY29tIiwiaWF0IjoxNzM3MjgyMjE1LCJleHAiOjE3MzcyODU4MTV9.cwzSEshDRipyDO1I60bd2jB9G52Oyxn1RUc8rpXop08' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Content-Type: application/json' \\\n  -H 'Cookie: CSRF-Token-4AACGSG=UpeCYrj6DiKtC5SCMHxCPTFomDhKMHmH; pma_lang=en; phpMyAdmin=66d09b9c188b115d12a8a713df950e4a; pmaUser-1=0YoKBda%2B9DUpQhx8%2BFVtw2ktJETmomfa%2FHrgr6w97HEFFwWyTcrx27wM28w%3D; pmaAuth-1=fMPpDDqRyF0d8wa0Q0%2BEQXmuhjwwO2UPmeBr15th2lL9Un%2B0GgIDS6D%2FGy2zEmvwB31OfD7UqWpVQ3HE' \\\n  -H 'If-None-Match: W/\"33-XD7Lr2cA3TPvb1ymgy9GBARwXGs\"' \\\n  -H 'Referer: http://127.0.0.1:8081/profile.html' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: same-origin' \\\n  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36' \\\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"'"
+			},
+			"response": [
+				{
+					"name": "get my credits order history",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-US,en;q=0.9,zh;q=0.8,ja;q=0.7"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTA2LCJlbWFpbCI6InRlc3RAdGVzdDEuY29tIiwiaWF0IjoxNzM3Mjg0MTI5LCJleHAiOjE3MzcyODc3Mjl9.MdzK1HeVQOgT0DPx4hd0xMbDSrtflxZV9SMHSazRqh8"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "CSRF-Token-4AACGSG=UpeCYrj6DiKtC5SCMHxCPTFomDhKMHmH; pma_lang=en; phpMyAdmin=66d09b9c188b115d12a8a713df950e4a; pmaUser-1=0YoKBda%2B9DUpQhx8%2BFVtw2ktJETmomfa%2FHrgr6w97HEFFwWyTcrx27wM28w%3D; pmaAuth-1=fMPpDDqRyF0d8wa0Q0%2BEQXmuhjwwO2UPmeBr15th2lL9Un%2B0GgIDS6D%2FGy2zEmvwB31OfD7UqWpVQ3HE"
+							},
+							{
+								"key": "If-None-Match",
+								"value": "W/\"33-XD7Lr2cA3TPvb1ymgy9GBARwXGs\"",
+								"disabled": true
+							},
+							{
+								"key": "Referer",
+								"value": "http://127.0.0.1:8081/profile.html"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-origin"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"macOS\""
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8081/api/v1/order/orders/mine?page=1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"order",
+								"orders",
+								"mine"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.27.2"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Jan 2025 11:03:45 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "51"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"33-XD7Lr2cA3TPvb1ymgy9GBARwXGs\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"total\": 0,\n    \"page\": 1,\n    \"limit\": 10,\n    \"pages\": 0,\n    \"data\": []\n}"
+				},
+				{
+					"name": "get my credits order history",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-US,en;q=0.9,zh;q=0.8,ja;q=0.7"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTA2LCJlbWFpbCI6InRlc3RAdGVzdDEuY29tIiwiaWF0IjoxNzM3Mjg0MTI5LCJleHAiOjE3MzcyODc3Mjl9.MdzK1HeVQOgT0DPx4hd0xMbDSrtflxZV9SMHSazRqh8"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "CSRF-Token-4AACGSG=UpeCYrj6DiKtC5SCMHxCPTFomDhKMHmH; pma_lang=en; phpMyAdmin=66d09b9c188b115d12a8a713df950e4a; pmaUser-1=0YoKBda%2B9DUpQhx8%2BFVtw2ktJETmomfa%2FHrgr6w97HEFFwWyTcrx27wM28w%3D; pmaAuth-1=fMPpDDqRyF0d8wa0Q0%2BEQXmuhjwwO2UPmeBr15th2lL9Un%2B0GgIDS6D%2FGy2zEmvwB31OfD7UqWpVQ3HE"
+							},
+							{
+								"key": "If-None-Match",
+								"value": "W/\"33-XD7Lr2cA3TPvb1ymgy9GBARwXGs\"",
+								"disabled": true
+							},
+							{
+								"key": "Referer",
+								"value": "http://127.0.0.1:8081/profile.html"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-origin"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"macOS\""
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8081/api/v1/order/orders/mine?page=1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"order",
+								"orders",
+								"mine"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.27.2"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Jan 2025 11:13:55 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "388"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"184-PfLcZlcwL24ORYjCanOSVa4y8lk\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"total\": 2,\n    \"page\": 1,\n    \"limit\": 10,\n    \"pages\": 1,\n    \"data\": [\n        {\n            \"_id\": \"678cdd30f754c6a786c7cbab\",\n            \"userId\": 506,\n            \"orderId\": \"0NY26113K3038941C\",\n            \"points\": 15,\n            \"timestamp\": \"2025-01-19T11:08:32.707Z\",\n            \"amount\": 15,\n            \"status\": \"CREATED\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"678cdcb7f754c6a786c7cba7\",\n            \"userId\": 506,\n            \"orderId\": \"2U1384255V032611M\",\n            \"points\": 10,\n            \"timestamp\": \"2025-01-19T11:06:31.028Z\",\n            \"amount\": 10,\n            \"status\": \"COMPLETED\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "create order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9,zh;q=0.8,ja;q=0.7"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTA2LCJlbWFpbCI6InRlc3RAdGVzdDEuY29tIiwiaWF0IjoxNzM3Mjg0MTI5LCJleHAiOjE3MzcyODc3Mjl9.MdzK1HeVQOgT0DPx4hd0xMbDSrtflxZV9SMHSazRqh8"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "CSRF-Token-4AACGSG=UpeCYrj6DiKtC5SCMHxCPTFomDhKMHmH; pma_lang=en; phpMyAdmin=66d09b9c188b115d12a8a713df950e4a; pmaUser-1=0YoKBda%2B9DUpQhx8%2BFVtw2ktJETmomfa%2FHrgr6w97HEFFwWyTcrx27wM28w%3D; pmaAuth-1=fMPpDDqRyF0d8wa0Q0%2BEQXmuhjwwO2UPmeBr15th2lL9Un%2B0GgIDS6D%2FGy2zEmvwB31OfD7UqWpVQ3HE"
+					},
+					{
+						"key": "Origin",
+						"value": "http://127.0.0.1:8081"
+					},
+					{
+						"key": "Referer",
+						"value": "http://127.0.0.1:8081/payment.html"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-origin"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"value\":\"10\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8081/api/v1/payment/pay",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"payment",
+						"pay"
+					]
+				},
+				"description": "Generated from cURL: curl 'http://127.0.0.1:8081/api/v1/payment/pay' \\\n  -H 'Accept: */*' \\\n  -H 'Accept-Language: en-US,en;q=0.9,zh;q=0.8,ja;q=0.7' \\\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDAzLCJlbWFpbCI6InRlc3RAdGVzdDEuY29tIiwiaWF0IjoxNzM3MjgyMjE1LCJleHAiOjE3MzcyODU4MTV9.cwzSEshDRipyDO1I60bd2jB9G52Oyxn1RUc8rpXop08' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Content-Type: application/json' \\\n  -H 'Cookie: CSRF-Token-4AACGSG=UpeCYrj6DiKtC5SCMHxCPTFomDhKMHmH; pma_lang=en; phpMyAdmin=66d09b9c188b115d12a8a713df950e4a; pmaUser-1=0YoKBda%2B9DUpQhx8%2BFVtw2ktJETmomfa%2FHrgr6w97HEFFwWyTcrx27wM28w%3D; pmaAuth-1=fMPpDDqRyF0d8wa0Q0%2BEQXmuhjwwO2UPmeBr15th2lL9Un%2B0GgIDS6D%2FGy2zEmvwB31OfD7UqWpVQ3HE' \\\n  -H 'Origin: http://127.0.0.1:8081' \\\n  -H 'Referer: http://127.0.0.1:8081/payment.html' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: same-origin' \\\n  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36' \\\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  --data-raw '{\"value\":\"10\"}'"
+			},
+			"response": [
+				{
+					"name": "create order",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-US,en;q=0.9,zh;q=0.8,ja;q=0.7"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTA2LCJlbWFpbCI6InRlc3RAdGVzdDEuY29tIiwiaWF0IjoxNzM3Mjg0MTI5LCJleHAiOjE3MzcyODc3Mjl9.MdzK1HeVQOgT0DPx4hd0xMbDSrtflxZV9SMHSazRqh8"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "CSRF-Token-4AACGSG=UpeCYrj6DiKtC5SCMHxCPTFomDhKMHmH; pma_lang=en; phpMyAdmin=66d09b9c188b115d12a8a713df950e4a; pmaUser-1=0YoKBda%2B9DUpQhx8%2BFVtw2ktJETmomfa%2FHrgr6w97HEFFwWyTcrx27wM28w%3D; pmaAuth-1=fMPpDDqRyF0d8wa0Q0%2BEQXmuhjwwO2UPmeBr15th2lL9Un%2B0GgIDS6D%2FGy2zEmvwB31OfD7UqWpVQ3HE"
+							},
+							{
+								"key": "Origin",
+								"value": "http://127.0.0.1:8081"
+							},
+							{
+								"key": "Referer",
+								"value": "http://127.0.0.1:8081/payment.html"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-origin"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"macOS\""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"value\":\"10\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8081/api/v1/payment/pay",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"payment",
+								"pay"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.27.2"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Jan 2025 11:06:31 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "501"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1f5-OjpfTtLrqtH8F4EOkXutShFXw2M\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"2U1384255V032611M\",\n    \"status\": \"CREATED\",\n    \"links\": [\n        {\n            \"href\": \"https://api.sandbox.paypal.com/v2/checkout/orders/2U1384255V032611M\",\n            \"rel\": \"self\",\n            \"method\": \"GET\"\n        },\n        {\n            \"href\": \"https://www.sandbox.paypal.com/checkoutnow?token=2U1384255V032611M\",\n            \"rel\": \"approve\",\n            \"method\": \"GET\"\n        },\n        {\n            \"href\": \"https://api.sandbox.paypal.com/v2/checkout/orders/2U1384255V032611M\",\n            \"rel\": \"update\",\n            \"method\": \"PATCH\"\n        },\n        {\n            \"href\": \"https://api.sandbox.paypal.com/v2/checkout/orders/2U1384255V032611M/capture\",\n            \"rel\": \"capture\",\n            \"method\": \"POST\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "capture order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9,zh;q=0.8,ja;q=0.7"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTA2LCJlbWFpbCI6InRlc3RAdGVzdDEuY29tIiwiaWF0IjoxNzM3Mjg0MTI5LCJleHAiOjE3MzcyODc3Mjl9.MdzK1HeVQOgT0DPx4hd0xMbDSrtflxZV9SMHSazRqh8"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Length",
+						"value": "0"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "CSRF-Token-4AACGSG=UpeCYrj6DiKtC5SCMHxCPTFomDhKMHmH; pma_lang=en; phpMyAdmin=66d09b9c188b115d12a8a713df950e4a; pmaUser-1=0YoKBda%2B9DUpQhx8%2BFVtw2ktJETmomfa%2FHrgr6w97HEFFwWyTcrx27wM28w%3D; pmaAuth-1=fMPpDDqRyF0d8wa0Q0%2BEQXmuhjwwO2UPmeBr15th2lL9Un%2B0GgIDS6D%2FGy2zEmvwB31OfD7UqWpVQ3HE"
+					},
+					{
+						"key": "Origin",
+						"value": "http://127.0.0.1:8081"
+					},
+					{
+						"key": "Referer",
+						"value": "http://127.0.0.1:8081/payment.html"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-origin"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8081/api/v1/payment/capture/2U1384255V032611M",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"payment",
+						"capture",
+						"2U1384255V032611M"
+					]
+				},
+				"description": "Generated from cURL: curl 'http://127.0.0.1:8081/api/v1/payment/capture/89661804271177916' \\\n  -X 'POST' \\\n  -H 'Accept: */*' \\\n  -H 'Accept-Language: en-US,en;q=0.9,zh;q=0.8,ja;q=0.7' \\\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDAzLCJlbWFpbCI6InRlc3RAdGVzdDEuY29tIiwiaWF0IjoxNzM3MjgyMjE1LCJleHAiOjE3MzcyODU4MTV9.cwzSEshDRipyDO1I60bd2jB9G52Oyxn1RUc8rpXop08' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Content-Length: 0' \\\n  -H 'Content-Type: application/json' \\\n  -H 'Cookie: CSRF-Token-4AACGSG=UpeCYrj6DiKtC5SCMHxCPTFomDhKMHmH; pma_lang=en; phpMyAdmin=66d09b9c188b115d12a8a713df950e4a; pmaUser-1=0YoKBda%2B9DUpQhx8%2BFVtw2ktJETmomfa%2FHrgr6w97HEFFwWyTcrx27wM28w%3D; pmaAuth-1=fMPpDDqRyF0d8wa0Q0%2BEQXmuhjwwO2UPmeBr15th2lL9Un%2B0GgIDS6D%2FGy2zEmvwB31OfD7UqWpVQ3HE' \\\n  -H 'Origin: http://127.0.0.1:8081' \\\n  -H 'Referer: http://127.0.0.1:8081/payment.html' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: same-origin' \\\n  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36' \\\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"'"
+			},
+			"response": [
+				{
+					"name": "capture order",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-US,en;q=0.9,zh;q=0.8,ja;q=0.7"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTA2LCJlbWFpbCI6InRlc3RAdGVzdDEuY29tIiwiaWF0IjoxNzM3Mjg0MTI5LCJleHAiOjE3MzcyODc3Mjl9.MdzK1HeVQOgT0DPx4hd0xMbDSrtflxZV9SMHSazRqh8"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Content-Length",
+								"value": "0"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "CSRF-Token-4AACGSG=UpeCYrj6DiKtC5SCMHxCPTFomDhKMHmH; pma_lang=en; phpMyAdmin=66d09b9c188b115d12a8a713df950e4a; pmaUser-1=0YoKBda%2B9DUpQhx8%2BFVtw2ktJETmomfa%2FHrgr6w97HEFFwWyTcrx27wM28w%3D; pmaAuth-1=fMPpDDqRyF0d8wa0Q0%2BEQXmuhjwwO2UPmeBr15th2lL9Un%2B0GgIDS6D%2FGy2zEmvwB31OfD7UqWpVQ3HE"
+							},
+							{
+								"key": "Origin",
+								"value": "http://127.0.0.1:8081"
+							},
+							{
+								"key": "Referer",
+								"value": "http://127.0.0.1:8081/payment.html"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-origin"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"macOS\""
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8081/api/v1/payment/capture/2U1384255V032611M",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"payment",
+								"capture",
+								"2U1384255V032611M"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.27.2"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Jan 2025 11:13:39 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1146"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"47a-/MU0GGdYp2psHHATkfv+Y56A6Vw\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"2U1384255V032611M\",\n    \"status\": \"COMPLETED\",\n    \"purchase_units\": [\n        {\n            \"reference_id\": \"default\",\n            \"shipping\": {\n                \"name\": {\n                    \"full_name\": \"Doe John\"\n                },\n                \"address\": {\n                    \"address_line_1\": \"NO 1 Nan Jin Road\",\n                    \"admin_area_2\": \"Shanghai\",\n                    \"admin_area_1\": \"Shanghai\",\n                    \"postal_code\": \"200000\",\n                    \"country_code\": \"C2\"\n                }\n            },\n            \"payments\": {\n                \"captures\": [\n                    {\n                        \"id\": \"1VJ72169GX4734455\",\n                        \"status\": \"COMPLETED\",\n                        \"amount\": {\n                            \"currency_code\": \"USD\",\n                            \"value\": \"10.00\"\n                        },\n                        \"final_capture\": true,\n                        \"seller_protection\": {\n                            \"status\": \"ELIGIBLE\",\n                            \"dispute_categories\": [\n                                \"ITEM_NOT_RECEIVED\",\n                                \"UNAUTHORIZED_TRANSACTION\"\n                            ]\n                        },\n                        \"seller_receivable_breakdown\": {\n                            \"gross_amount\": {\n                                \"currency_code\": \"USD\",\n                                \"value\": \"10.00\"\n                            },\n                            \"paypal_fee\": {\n                                \"currency_code\": \"USD\",\n                                \"value\": \"0.64\"\n                            },\n                            \"net_amount\": {\n                                \"currency_code\": \"USD\",\n                                \"value\": \"9.36\"\n                            }\n                        },\n                        \"links\": [\n                            {\n                                \"href\": \"https://api.sandbox.paypal.com/v2/payments/captures/1VJ72169GX4734455\",\n                                \"rel\": \"self\",\n                                \"method\": \"GET\"\n                            },\n                            {\n                                \"href\": \"https://api.sandbox.paypal.com/v2/payments/captures/1VJ72169GX4734455/refund\",\n                                \"rel\": \"refund\",\n                                \"method\": \"POST\"\n                            },\n                            {\n                                \"href\": \"https://api.sandbox.paypal.com/v2/checkout/orders/2U1384255V032611M\",\n                                \"rel\": \"up\",\n                                \"method\": \"GET\"\n                            }\n                        ],\n                        \"create_time\": \"2025-01-19T11:13:39Z\",\n                        \"update_time\": \"2025-01-19T11:13:39Z\"\n                    }\n                ]\n            }\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
