@@ -30,6 +30,7 @@ services:
       - ./app.env
     depends_on:
       - mongodb
+      - redis
   db:
     container_name: db-server
     image: mysql
