@@ -264,6 +264,7 @@ curl --location --request POST 'http://127.0.0.1:8081/api/v1/payment/capture/2U1
 +	express-mongo-sanitize is used to sanitize inputs; Joi is used to validate the legality of input fields. This applies to fields such as user data, order data, and pagination parameters from the frontend.
 +	JWT (JSON Web Token) is used for user authentication.
 
+### 说明图
 ```mermaid
 graph TD
   subgraph Reverse Proxy
@@ -305,4 +306,73 @@ graph TD
   style Services fill:#add8e6,stroke:#333,stroke-width:2px
   style Databases fill:#f5deb3,stroke:#333,stroke-width:2px
   style Caching fill:#98fb98,stroke:#333,stroke-width:2px
+```
+
+### 代码说明
+```
+├── Dockerfile
+├── api_server
+│   ├── config // 配置目录
+│   │   ├── app.js
+│   │   ├── auth.js
+│   │   ├── config.js
+│   │   └── database.js
+│   ├── controllers // 控制器
+│   │   ├── order.controller.js
+│   │   ├── payment.controller.js
+│   │   └── user.controller.js
+│   ├── database // sequelize 数据库配置, redis
+│   │   ├── migrations
+│   │   ├── redis.js
+│   │   ├── seeders
+│   │   └── sequelize.js
+│   ├── enum // 枚举 http code
+│   │   └── httpCode.js
+│   ├── middleware // 中间件 用于验证token， admin权限
+│   │   ├── admin.js
+│   │   └── auth.js
+│   ├── models // sequelize 数据模型，mongodb 数据模型，用户，订单
+│   │   ├── index.js
+│   │   ├── order.js
+│   │   └── user.js
+│   ├── repositories // 数据库操作
+│   │   ├── order.repository.js
+│   │   ├── repository.js
+│   │   └── user.repository.js
+│   ├── routes // 路由
+│   │   ├── api
+│   │   ├── order.js
+│   │   └── user.js
+│   ├── services // 服务层，用户服务，订单服务
+│   │   ├── order.service.js
+│   │   ├── service.js
+│   │   └── user.service.js
+│   ├── utils // 工具函数
+│   │   ├── asyncHandler.js
+│   │   ├── axios.js
+│   │   ├── formatQuery.js
+│   │   └── httpError.js
+│   └── validators // 验证器，字段检查，分页检查
+│       ├── order.validator.js
+│       ├── user.validator.js
+│       └── validator.js
+├── app.env      // 环境变量
+├── app_order.js // 订单服务入口
+├── app_user.js // 用户服务入口
+├── database
+│   └── mongo-init.js // mongodb 初始化
+├── docker-compose.yml // docker compose 配置
+├── html
+│   ├── admin.html // 管理员页面
+│   ├── index.html // 首页 登陆
+│   ├── payment.html // 支付页面
+│   ├── profile.html // 用户信息页面
+│   └── register.html // 注册页面
+├── mongod.conf // mongodb 配置
+├── nginx.conf // nginx 配置
+├── node_modules
+├── package-lock.json
+├── package.json
+├── payment.postman_collection.json
+├── readme.md
 ```
