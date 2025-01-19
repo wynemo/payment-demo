@@ -51,6 +51,7 @@ curl 'http://127.0.0.1:8081/api/v1/users/register' \
 ```
 
 <video src="https://github.com/wynemo/payment-demo/raw/refs/heads/master/%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C-1.mp4" width="352" height="720"></video>
+
 ### 用户登录
 curl 请求为
 ```bash
