@@ -23,7 +23,7 @@ export const order = async (req, res) => {
             currency_code: "USD",
             value: `${value}`,
           },
-          description: "Purchase of 50 Credits",
+          description: `Purchase of ${value}Credits`,
         },
       ],
     });
