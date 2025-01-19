@@ -1,5 +1,6 @@
 services:
   app_user:
+    image: payment-demo-app-base:latest
     build: . # build from Dockerfile
     command: >
       sh -c "sleep 15 &&
@@ -19,7 +20,7 @@ services:
     depends_on:
       - db
   app_order:
-    build: . # build from Dockerfile
+    image: payment-demo-app-base:latest
     command: >
       sh -c "node app_order.js"
     volumes:
