@@ -14,6 +14,8 @@ docker compose up --build
 
 ## postman 测试演示视频
 
+[![postman 测试](https://img.youtube.com/vi/6awCiAD7OEY/0.jpg)](https://www.youtube.com/watch?v=6awCiAD7OEY)
+
 ## API 接口
 
 ### 注册用户
