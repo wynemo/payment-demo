@@ -1,14 +1,14 @@
 import express from "express";
+import {
+  createOrder,
+  getUserOrders,
+} from "../../controllers/order.controller.js";
 import { applyAsyncHandlerToRouter } from "../../utils/asyncHandler.js";
-import OrderController from "../../controllers/order.controller.js";
-import OrderService from "../../services/order.service.js";
 
+const router = express.Router();
 // router.use(authMiddleware); // Add the middleware to the router
 
-// 使用路由
-
-const orderService = new OrderService();
-const orderController = new OrderController(orderService);
-const router = orderController.router;
+router.post("/orders", createOrder); // 创建订单
+router.get("/orders/:userId", getUserOrders); // 获取用户订单列表
 
 export default applyAsyncHandlerToRouter(router);
