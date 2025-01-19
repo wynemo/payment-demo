@@ -10,6 +10,10 @@ class OrderService {
     return this.orderRepository.createOrder(orderData);
   }
 
+  async updateOrder(orderId, orderData) {
+    return this.orderRepository.updateOrder(orderId, orderData);
+  }
+
   // 获取用户订单列表
   async getUserOrders(userId) {
     return this.orderRepository.getOrdersByUserId(userId);

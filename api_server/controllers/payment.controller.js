@@ -1,5 +1,8 @@
 import { OK, BAD_REQUEST } from "../enum/httpCode.js";
 import { core, orders, payments } from "@hyperse/paypal-node-sdk";
+import OrderService from "../services/order.service.js";
+
+const orderService = new OrderService();
 
 // 配置 PayPal 客户端
 const paypalClient = new core.PayPalHttpClient(
@@ -31,6 +34,16 @@ export const order = async (req, res) => {
     // 调用 PayPal API 创建订单
     const order = await paypalClient.execute(orderRequest);
 
+    const orderData = {
+      userId: req.user.id,
+      orderId: order.result.id,
+      points: value,
+      timestamp: new Date(),
+      amount: value,
+      status: order.result.status,
+    };
+    await orderService.createOrder(orderData);
+
     // 返回订单信息给前端
     res.status(OK).json({
       id: order.result.id, // 订单 ID
@@ -53,6 +66,11 @@ export const capture = async (req, res) => {
 
     // 执行捕获
     const capture = await paypalClient.execute(captureRequest);
+
+    const orderData = {
+      status: capture.result.status,
+    };
+    await orderService.updateOrder(orderId, orderData);
 
     // 返回支付结果
     res.status(OK).json({
