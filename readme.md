@@ -49,7 +49,7 @@ curl 'http://127.0.0.1:8081/api/v1/users/register' \
     }
 }
 ```
-[用户注册-点击此处观看视频](用户注册-1.mp4)
+[用户注册-点击此处观看视频](https://github.com/wynemo/payment-demo/raw/refs/heads/master/%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C-1.mp4)
 
 ### 用户登录
 curl 请求为
