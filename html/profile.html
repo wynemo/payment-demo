@@ -53,6 +53,22 @@
             .payment-link:hover {
                 background-color: #218838;
             }
+            #recharge-history ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            #recharge-history li {
+                margin-bottom: 20px;
+                padding: 10px;
+                background-color: #f1f1f1;
+                border-radius: 5px;
+            }
+
+            #recharge-history hr {
+                border: none;
+                border-top: 1px solid #ddd;
+            }
         </style>
     </head>
     <body>
@@ -62,6 +78,12 @@
             <h1>Your Profile</h1>
             <div id="profile-info" class="profile-info">Loading profile...</div>
             <a href="payment.html" class="payment-link">虚拟点数充值</a>
+            <div id="recharge-history" class="profile-info">
+                <h2>充值历史</h2>
+                <ul id="orders-list">
+                    Loading...
+                </ul>
+            </div>
         </div>
 
         <script>
@@ -103,6 +125,50 @@
                     .catch((error) => {
                         alert(error.message);
                         window.location.href = "index.html";
+                    });
+                // 请求充值历史
+                fetch("/api/v1/order/orders/mine", {
+                    method: "GET",
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                        "Content-Type": "application/json",
+                    },
+                })
+                    .then((response) => {
+                        if (!response.ok) {
+                            throw new Error(
+                                "Failed to fetch recharge history.",
+                            );
+                        }
+                        return response.json();
+                    })
+                    .then((data) => {
+                        const ordersList =
+                            document.getElementById("orders-list");
+                        ordersList.innerHTML = ""; // 清空加载提示
+
+                        if (data.length === 0) {
+                            ordersList.innerHTML =
+                                "<p>No recharge history available.</p>";
+                        } else {
+                            data.forEach((order) => {
+                                const li = document.createElement("li");
+                                li.innerHTML = `
+                                    <p><strong>Order ID:</strong> ${order.orderId}</p>
+                                    <p><strong>Points:</strong> ${order.points}</p>
+                                    <p><strong>Amount:</strong> $${order.amount}</p>
+                                    <p><strong>Status:</strong> ${order.status}</p>
+                                    <p><strong>Timestamp:</strong> ${new Date(order.timestamp).toLocaleString()}</p>
+                                    <hr>
+                                `;
+                                ordersList.appendChild(li);
+                            });
+                        }
+                    })
+                    .catch((error) => {
+                        alert(error.message);
+                        document.getElementById("orders-list").innerHTML =
+                            "<p>Failed to load recharge history.</p>";
                     });
             }
 

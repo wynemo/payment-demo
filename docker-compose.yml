@@ -75,12 +75,12 @@ services:
       - ./mongod.conf:/etc/mongo/mongod.conf
     ports:
       - "27017:27017"
-  # phpmyadmin:
-  #   image: phpmyadmin
-  #   restart: always
-  #   ports:
-  #     - 127.0.0.1:8000:80
-  #   environment:
-  #     - PMA_HOST=db
-  #   depends_on:
-  #     - db
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 127.0.0.1:8000:80
+    environment:
+      - PMA_HOST=db
+    depends_on:
+      - db

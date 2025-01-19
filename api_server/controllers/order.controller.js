@@ -16,8 +16,8 @@ export const createOrder = async (req, res) => {
 
 export const getUserOrders = async (req, res) => {
   try {
-    const { userId } = req.params;
-    const orders = await orderService.getUserOrders(userId);
+    const { id } = req.user;
+    const orders = await orderService.getUserOrders(id);
     res.status(200).json(orders);
   } catch (error) {
     res.status(500).json({ error: error.message });
