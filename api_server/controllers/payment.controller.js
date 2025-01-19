@@ -1,3 +1,4 @@
+import { OK, BAD_REQUEST } from "../enum/httpCode.js";
 import { core, orders, payments } from "@hyperse/paypal-node-sdk";
 
 // 配置 PayPal 客户端
@@ -31,7 +32,7 @@ export const order = async (req, res) => {
     const order = await paypalClient.execute(orderRequest);
 
     // 返回订单信息给前端
-    res.status(200).json({
+    res.status(OK).json({
       id: order.result.id, // 订单 ID
       status: order.result.status, // 订单状态
       links: order.result.links, // 包含支付链接
@@ -54,7 +55,7 @@ export const capture = async (req, res) => {
     const capture = await paypalClient.execute(captureRequest);
 
     // 返回支付结果
-    res.status(200).json({
+    res.status(OK).json({
       id: capture.result.id,
       status: capture.result.status,
       purchase_units: capture.result.purchase_units,
