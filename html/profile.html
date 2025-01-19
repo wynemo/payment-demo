@@ -143,6 +143,7 @@
                         return response.json();
                     })
                     .then((data) => {
+                        data = data.data;
                         const ordersList =
                             document.getElementById("orders-list");
                         ordersList.innerHTML = ""; // 清空加载提示
