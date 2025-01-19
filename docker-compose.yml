@@ -13,8 +13,6 @@ services:
       - /app/node_modules
     expose:
       - 3000
-    ports:
-      - 127.0.0.1:3000:3000
     env_file:
       - ./app.env
     depends_on:
@@ -28,8 +26,6 @@ services:
       - /app/node_modules
     expose:
       - 3000
-    ports:
-      - 127.0.0.1:3001:3000
     env_file:
       - ./app.env
     depends_on:
