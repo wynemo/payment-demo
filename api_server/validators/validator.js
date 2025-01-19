@@ -67,7 +67,10 @@ class Validation {
       );
     }
 
-    const { error, value } = schema.validate(data);
+    const options = {
+      stripUnknown: true, // 忽略未定义的字段
+    };
+    const { error, value } = schema.validate(data, options);
 
     if (error) {
       throw httpError(
