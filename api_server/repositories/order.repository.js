@@ -1,4 +1,5 @@
 import models from "../models/index.js";
+import formatQuery from "../utils/formatQuery.js";
 const { Order } = models;
 
 class OrderRepository {
@@ -20,7 +21,12 @@ class OrderRepository {
   }
 
   // 获取用户订单列表，支持分页并返回总记录数
-  async getOrdersByUserId(userId, page = 1, limit = 10) {
+  async getOrdersByUserId(userId, option = {}) {
+    // page = 1, limit = 10
+    const query = option.query || {};
+    const { limit, offset, page } = formatQuery.pagination(query);
+    const { order, orderBy } = formatQuery.order(query);
+
     const skip = (page - 1) * limit; // 计算需要跳过的记录数
 
     // 并行计算订单列表和总记录数，提升性能

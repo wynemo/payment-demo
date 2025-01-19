@@ -15,8 +15,8 @@ class OrderService {
   }
 
   // 获取用户订单列表
-  async getUserOrders(userId) {
-    return this.orderRepository.getOrdersByUserId(userId);
+  async getUserOrders(userId, query = {}) {
+    return this.orderRepository.getOrdersByUserId(userId, { query: query });
   }
 }
 

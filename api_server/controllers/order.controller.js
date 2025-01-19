@@ -1,7 +1,9 @@
 import express from "express";
 import OrderService from "../services/order.service.js";
+import OrderValidator from "../validators/order.validator.js";
 
 const orderService = new OrderService();
+const orderValidator = new OrderValidator();
 
 // 创建订单
 export const createOrder = async (req, res) => {
@@ -16,6 +18,16 @@ export const createOrder = async (req, res) => {
 
 export const getUserOrders = async (req, res) => {
   try {
+    const baseSchema = orderValidator.base();
+    const paginationSchema = orderValidator.pagination();
+    const orderSchema = orderValidator.order();
+
+    //Validation process
+    const validatedQuery = orderValidator.validate(
+      [baseSchema, paginationSchema, orderSchema],
+      req.query,
+    );
+
     const { id } = req.user;
     const orders = await orderService.getUserOrders(id);
     res.status(200).json(orders);
